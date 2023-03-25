@@ -35,24 +35,33 @@ const DetallePokemon = () => {
           <h3 className="h4 fw-bolder">{pokemon.name}</h3>
 
           <div className="fs-5">
-            <span className="text">Grupo: </span>
-            {pokemon.egg_groups?.map((pk) => (
-              <span key={pk.name} className={`${pk.name}`}>
+            <span className="text">Habilidades: </span>
+            {pokemon.abilities?.map((pk) => (
+              <span key={pk.ability?.name} className={`${pk.ability?.name}`}>
                 {" "}
-                {pk.name}{" "}
+                {pk.ability?.name}
+                {", "}
               </span>
             ))}
           </div>
-
-          <p>
-            Paragraph of text beneath thsasasae heading to explain the heading.
-            We'll add onto it with another sentence and probably just keep going
-            until we run out of words.
-          </p>
-          <a className="text-decoration-none" href="#!">
-            Call to action
-            <i className="bi bi-arrow-right"></i>
-          </a>
+          <div className="fs-5">
+            <span className="text">Tipo: </span>
+            {pokemon.types?.map((type) => (
+              <span key={type.type.name} className={`${type.type.name}`}>
+                {" "}
+                {type.type.name}
+                {", "}
+              </span>
+            ))}
+          </div>
+          <div className="fs-5">
+            <span className="text">Altura: </span>
+            <span>{pokemon.height}.</span>
+          </div>
+          <div className="fs-5">
+            <span className="text">Peso: </span>
+            <span>{pokemon.weight} KG.</span>
+          </div>
         </div>
       </div>
     </div>
